@@ -252,6 +252,7 @@ main
 
 #pagamento
   display: flex
+  flex-wrap: wrap
   justify-content: space-between
   padding: 3rem 5rem
   background: variables.$dark
@@ -259,23 +260,24 @@ main
   & .text
     font-family: 'Roboto Condensed', sans-serif
     max-width: 20rem
+    min-width: 18rem
+    & .metodos, .contato
+      background: variables.$gray
+      padding: 1rem
+      margin: .5rem
+      width: fit-content
     & h4
       color: variables.$iced
       font-weight: 700
       font-size: 1.5rem
   & #right
+    min-width: 18rem
     h4
       text-align: left
     .atend
       text-align: center
     p
       text-align: center
-  & .metodos, .contato
-    font-size: 3rem
-    color: variables.$iced
-  .icon
-    color: variables.$iced
-    font-size: 3rem
 
 @media (max-width: 940)
   header

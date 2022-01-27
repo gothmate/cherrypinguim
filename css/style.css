@@ -302,6 +302,7 @@ main {
 
 #pagamento {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 3rem 5rem;
   background: #2A2B2D;
@@ -310,11 +311,21 @@ main {
 #pagamento .text {
   font-family: "Roboto Condensed", sans-serif;
   max-width: 20rem;
+  min-width: 18rem;
+}
+#pagamento .text .metodos, #pagamento .text .contato {
+  background: #A1A1A1;
+  padding: 1rem;
+  margin: 0.5rem;
+  width: fit-content;
 }
 #pagamento .text h4 {
   color: #F5F4F1;
   font-weight: 700;
   font-size: 1.5rem;
+}
+#pagamento #right {
+  min-width: 18rem;
 }
 #pagamento #right h4 {
   text-align: left;
@@ -324,14 +335,6 @@ main {
 }
 #pagamento #right p {
   text-align: center;
-}
-#pagamento .metodos, #pagamento .contato {
-  font-size: 3rem;
-  color: #F5F4F1;
-}
-#pagamento .icon {
-  color: #F5F4F1;
-  font-size: 3rem;
 }
 
 @media (max-width: 940) {
