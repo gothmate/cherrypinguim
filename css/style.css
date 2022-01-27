@@ -322,7 +322,7 @@ main {
 #pagamento .text h4 {
   color: #F5F4F1;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw + 0.3rem, 1.5rem);
 }
 #pagamento #right {
   min-width: 18rem;
@@ -364,6 +364,11 @@ main {
   #cardapio .fotos .salgados p, #cardapio .fotos .doces p {
     position: relative;
     left: 0;
+  }
+
+  #pagamento {
+    padding: 0;
+    justify-content: flex-start;
   }
 }
 
