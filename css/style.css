@@ -17,11 +17,11 @@ body {
 
 header {
   position: fixed;
+  width: 100vw;
   z-index: 100;
-  overflow-x: hidden;
 }
 header ul {
-  width: 100vw;
+  position: relative;
   background: #EED524;
   display: flex;
   justify-content: center;
@@ -29,7 +29,10 @@ header ul {
 }
 header li {
   list-style: none;
-  margin: 2rem;
+  padding: 2rem 0;
+  padding-left: clamp(1rem, 5vw + 0.2rem, 2rem);
+  padding-right: clamp(1rem, 5vw + 0.2rem, 2rem);
+  min-width: max-content;
 }
 header a {
   font-family: "Single Day", sans-serif;
@@ -43,16 +46,18 @@ header a:hover {
 header .img-container {
   position: relative;
   width: 123px;
-  height: 90px;
+  height: 80px;
 }
 header .img-container img {
   position: absolute;
+  top: 0;
+  left: calc(50% - 62.5px);
+  z-index: 100;
   width: 123px;
 }
 
 main {
   background: #EED524;
-  z-index: -10;
 }
 
 .container {
@@ -65,28 +70,27 @@ main {
 }
 
 #main_sec {
-  position: relative;
-  height: 83vh;
+  padding: 5rem 5rem 0;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: bottom;
 }
 #main_sec .text {
   margin-top: 5rem;
   color: #F5F4F1;
-  font-size: 5rem;
+  font-size: clamp(3rem, 5vw + 1rem, 5rem);
   line-height: 100%;
   z-index: 4;
 }
 #main_sec .text h2 {
-  font-size: 5rem;
+  font-size: clamp(3rem, 5vw + 1rem, 5rem);
   font-family: "Sacramento", cursive;
   line-height: 100%;
 }
 #main_sec .text h3 {
+  font-size: clamp(3rem, 5vw + 1rem, 6rem);
   font-family: "SansitaOne";
-  font-size: 6rem;
 }
 #main_sec .text p {
   font-family: "Single Day", sans-serif;
@@ -94,23 +98,26 @@ main {
 #main_sec .text span {
   font-family: "SansitaOne";
 }
-#main_sec img {
-  max-width: 50rem;
-  right: -10rem;
-  top: 7rem;
-  position: absolute;
-  width: 45rem;
-  background: transparent;
+#main_sec .text .btn {
+  margin-bottom: 3rem;
 }
-#main_sec #pengo-bg {
-  position: absolute;
-  width: 50%;
-  top: 12rem;
-  right: -3rem;
+#main_sec .img {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 5rem;
+}
+#main_sec .img img {
+  width: clamp(20rem, 60vw + 1.5rem, 38rem);
+  right: 2rem;
+  top: 9rem;
 }
 
 #sobre {
+  padding: 0 5rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   position: relative;
   background: #F5F4F1;
   z-index: 1;
@@ -122,8 +129,8 @@ main {
   height: 100%;
   background: #F5F4F1;
   top: 0;
-  right: 50%;
   z-index: 0;
+  right: 50%;
 }
 #sobre::after {
   content: "";
@@ -132,39 +139,45 @@ main {
   height: 100%;
   background: #F5F4F1;
   top: 0;
-  right: -50%;
   z-index: 0;
+  right: -50%;
 }
 #sobre .img {
   z-index: 3;
 }
 #sobre .img img {
-  width: 360px;
+  max-width: 360px;
+  width: clamp(200px, 40vw + 5rem, 360px);
   padding: 8rem 0;
 }
 #sobre .text {
   position: relative;
   z-index: 4;
-  width: fit-content;
+  max-width: 600px;
+  min-width: 350px;
   margin: auto 6rem;
 }
 #sobre .text h2 {
   font-family: "Sahitya", serif;
-  font-size: 3.8rem;
+  font-size: clamp(2rem, 5vw + 1rem, 3.8rem);
   color: #EB6E6E;
   text-shadow: 0 0 10px #EB6E6E;
 }
 #sobre .text h3 {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: clamp(1rem, 2vw + 0.5rem, 3rem);
 }
 #sobre .text p {
   font-family: "Roboto Condensed", sans-serif;
-  font-size: 1.3rem;
+  font-size: clamp(0.8rem, 1vw + 0.4rem, 1.3rem);
+}
+#sobre .text .btn {
+  margin-bottom: 3rem;
 }
 
 #cardapio {
+  padding: 0 5rem;
   position: relative;
   height: 100%;
   z-index: 0;
@@ -172,84 +185,183 @@ main {
 }
 #cardapio::before {
   content: "";
-  position: absolute;
   width: 50vw;
   height: 100%;
   background: #2A2B2D;
   top: 0;
-  z-index: 5;
   left: -50%;
 }
 #cardapio::after {
   content: "";
-  position: absolute;
   width: 50vw;
   height: 100%;
   background: #2A2B2D;
   top: 0;
-  z-index: 5;
   right: -50%;
 }
 #cardapio .text {
-  position: relative;
-  z-index: 6;
   color: #F5F4F1;
   text-align: center;
   padding-top: 3rem;
+  font-size: clamp(0.8rem, 2vw + 0.8rem, 2.2rem);
 }
 #cardapio .text h4 {
   font-family: "Single Day", sans-serif;
-  font-size: 2.2rem;
   transform: rotate(-3deg);
   color: #EB6E6E;
   text-shadow: 0 4px 21px #EB6E6E;
+  font-size: clamp(0.8rem, 2vw + 0.8rem, 2.2rem);
 }
 #cardapio .text p {
   font-family: "Single Day", sans-serif;
-  font-size: 2.2rem;
+  font-size: clamp(0.8rem, 2vw + 0.8rem, 2.2rem);
 }
 #cardapio .text h2 {
   font-family: "Permanent Marker", cursive;
-  font-size: 96px;
+  font-size: clamp(2rem, 5vw + 1rem, 6rem);
   transform: rotate(-3deg);
 }
-#cardapio .salgados, #cardapio .doces {
+#cardapio .fotos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 88vw;
+}
+#cardapio .fotos .salgados, #cardapio .fotos .doces {
   position: relative;
   color: #F5F4F1;
   font-family: "Single Day";
   font-size: 2rem;
 }
-#cardapio .salgados p, #cardapio .doces p {
+#cardapio .fotos .salgados p, #cardapio .fotos .doces p {
   position: absolute;
   z-index: 7;
   top: -1.3rem;
   left: -3rem;
   transform: rotate(-15deg);
 }
-
-.galeria_sal {
-  position: relative;
-  z-index: 6;
-  display: inline-grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.5rem;
+#cardapio .fotos .salgados .galeria_sal, #cardapio .fotos .doces .galeria_sal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
   margin: 2rem auto;
 }
-.galeria_sal img {
-  max-width: 350px;
+#cardapio .fotos .salgados .galeria_sal img, #cardapio .fotos .doces .galeria_sal img {
+  width: clamp(150px, 20vw + 70px, 350px);
 }
-
-.galeria_doce {
-  position: relative;
-  z-index: 6;
-  display: inline-grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.5rem;
+#cardapio .fotos .salgados .galeria_doce, #cardapio .fotos .doces .galeria_doce {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
   margin: 0.5rem auto;
   padding-bottom: 3rem;
 }
-.galeria_doce img {
-  max-width: 350px;
+#cardapio .fotos .salgados .galeria_doce img, #cardapio .fotos .doces .galeria_doce img {
+  width: clamp(150px, 20vw + 70px, 350px);
+}
+
+#delivery {
+  padding: 0 5rem;
+  background: #F5F4F1;
+}
+#delivery .text {
+  color: #2A2B2D;
+  text-align: center;
+  padding-top: 3rem;
+}
+#delivery .text h4 {
+  font-family: "Permanent Marker", sans-serif;
+  font-size: clamp(2rem, 5vw + 1rem, 6rem);
+  transform: rotate(-3deg);
+}
+#delivery .text p {
+  font-family: "Single Day", sans-serif;
+  font-size: clamp(1rem, 1vw + 0.5rem, 2.25rem);
+  transform: rotate(-3deg);
+  color: #EB6E6E;
+  text-shadow: 0 4px 21px #EB6E6E;
+}
+#delivery .logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#delivery .logos .aiqfome, #delivery .logos .ifood, #delivery .logos .food99 {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1rem;
+  margin: 0 1rem;
+  margin-bottom: 3rem;
+}
+#delivery .logos .aiqfome img, #delivery .logos .ifood img, #delivery .logos .food99 img {
+  width: 200px;
+}
+
+#pagamento {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 5rem;
+  background: #2A2B2D;
+  color: #A1A1A1;
+}
+#pagamento .text {
+  font-family: "Roboto Condensed", sans-serif;
+  max-width: 20rem;
+}
+#pagamento .text h4 {
+  color: #F5F4F1;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+#pagamento #right h4 {
+  text-align: left;
+}
+#pagamento #right .atend {
+  text-align: center;
+}
+#pagamento #right p {
+  text-align: center;
+}
+#pagamento .metodos, #pagamento .contato {
+  font-size: 3rem;
+  color: #F5F4F1;
+}
+#pagamento .icon {
+  color: #F5F4F1;
+  font-size: 3rem;
+}
+
+@media (max-width: 940) {
+  header .img-container {
+    position: absolute;
+    z-index: -100;
+  }
+  header .img-container #pengo {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  #cardapio {
+    padding: 0;
+  }
+  #cardapio::before {
+    left: -50%;
+    width: 100vw;
+  }
+  #cardapio::after {
+    left: -50%;
+    width: 100vw;
+  }
+  #cardapio .fotos {
+    align-items: flex-start;
+  }
+  #cardapio .fotos .salgados p, #cardapio .fotos .doces p {
+    position: relative;
+    left: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

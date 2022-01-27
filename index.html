@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pinguim Lanches & Co</title>
     <link rel="stylesheet" href="./css/style.css" />
+
+    <link rel="stylesheet" href="./assets/style.css">
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -28,13 +30,14 @@
         <li>
           <a aria-current="page" href="#">Início</a>
         </li>
-        <li><a href="#">Delivery</a></li>
-        <div class="img-container">
+        <li><a href="#delivery">Delivery</a></li>
+        <li class="img-container">
           <img
+            id="pengo"
             src="./assets/62d6fd568218fe1b7f894932165c9c08-desenho-de-pinguim 1.png"
             alt="pinguim"
           />
-        </div>
+        </li>
         <li>
           <a href="#sobre">Sobre nós</a>
         </li>
@@ -44,61 +47,56 @@
       </ul>
     </header>
     <main>
-      <div class="container">
-        <section id="main_sec">
-          <div class="text">
-            <h2>A hora</h2>
-            <h3>PERFEITA</h3>
-            <p>para <span>LANCHAR!</span></p>
-            <button type="button" class="btn btn-danger">
-              Fazer pedido agora!
-            </button>
-          </div>
-          <div class="img">
-            <img
-              id="pengo-bg"
-              src="./assets/Vector.svg"
-              alt="penguin background"
-            />
-            <img
-              src="./assets/62d6fd568218fe1b7f894932165c9c08-desenho-de-pinguim 1-1.png"
-              alt=""
-            />
-          </div>
-        </section>
+      <section id="main_sec">
+        <div class="text">
+          <h2>A hora</h2>
+          <h3>PERFEITA</h3>
+          <p>para <span>LANCHAR!</span></p>
+          <button type="button" class="btn btn-danger">
+            Fazer pedido agora!
+          </button>
+        </div>
+        <div class="img">
+          <img
+            src="./assets/pinguin2.png"
+            alt=""
+          />
+        </div>
+      </section>
 
-        <section id="sobre">
-          <div class="img">
-            <img src="./assets/image 1.png" alt="Sanduiche" />
-          </div>
-          <div class="text">
-            <h2>Qualidade</h2>
-            <h3>QUALIDADE E VARIEDADE DE ALIMENTOS IMPECÁVEL.</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-              quis rem iusto numquam eligendi expedita, ab cupiditate aliquam
-            </p>
-            <button type="button" class="btn btn-danger">
-              Ver cardápio agora!
-            </button>
-          </div>
-        </section>
+      <section id="sobre">
+        <div class="img">
+          <img src="./assets/image 1.png" alt="Sanduiche" />
+        </div>
+        <div class="text">
+          <h2>Qualidade</h2>
+          <h3>QUALIDADE E VARIEDADE DE ALIMENTOS IMPECÁVEL.</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quis
+            rem iusto numquam eligendi expedita, ab cupiditate aliquam
+          </p>
+          <button type="button" class="btn btn-danger">
+            Ver cardápio agora!
+          </button>
+        </div>
+      </section>
 
-        <section id="cardapio">
-          <div class="text">
-            <h4>Aprecie o nosso maravilhoso cardápio</h4>
-            <h2>Cardápio !</h2>
-            <p>Hamburgueria Confeitaria</p>
-          </div>
+      <section id="cardapio">
+        <div class="text">
+          <h4>Aprecie o nosso maravilhoso cardápio</h4>
+          <h2>Cardápio !</h2>
+          <p>Hamburgueria Confeitaria</p>
+        </div>
+        <div class="fotos">
           <div class="salgados">
-            <p>Salgados</p>
-            <div class="galeria_sal">
+            <p>Salgados</p>   
+            <div id="galeria_sal" class="galeria_sal">
               <img src="./assets/image 2.png" alt="" />
               <img src="./assets/image 5.png" alt="" />
               <img src="./assets/image 4.png" alt="" />
             </div>
           </div>
-          <div class="doces">
+          <div id="galeria_doce" class="doces">
             <p>Doces</p>
             <div class="galeria_doce">
               <img src="./assets/image 6.png" alt="" />
@@ -106,8 +104,59 @@
               <img src="./assets/image 8.png" alt="" />
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <section id="delivery">
+        <div class="text">
+          <h4>Delivery</h4>
+          <p>Saiba onde nos encontrar com mais facilidade!</p>
+        </div>
+        <div class="logos">
+          <div class="aiqfome">
+            <img src="./assets/image 10.png"></img>
+            <button type="button" class="btn btn-danger">Fazer pedido</button>
+          </div>
+          <div class="ifood">
+            <img src="./assets/image 9.png"></img>
+            <button type="button" class="btn btn-danger">Fazer pedido</button>
+          </div>
+          <div class="food99">
+            <img src="./assets/image 11.png"></img>
+            <button type="button" class="btn btn-danger">Fazer pedido</button>
+          </div>
+        </div>
+      </section>
+      
+      <footer id="pagamento">
+        <div class="text">
+          <h4>MÉTODOS DE PAGAMENTO</h4>
+          <div class="metodos">
+            <svg class="icon icon-cc-mastercard"><use xlink:href="#icon-cc-mastercard"></use></svg>
+            <svg class="icon icon-cc-visa"><use xlink:href="#icon-cc-visa"></use></svg>
+            <svg class="icon icon-paypal"><use xlink:href="#icon-paypal"></use></svg>
+          </div>
+          <h4>SOBRE NÓS</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur molestias fugit libero tenetur, ab rem corporis unde saepe!</p>
+        </div>
+        <div id="right" class="text">
+          <h4 class="atend">HORÁRIO DE ATENDIMENTO</h4>
+          <p>Unidade - Itapetininga/SP</p>
+          <p>Segunda a quinta 18:00 às 00:00</p>
+          <p>Sexta e sábado 18:00 às 02h00</p>
+          <p>Domingo 18:00 às 23h00</p>
+          <h4>CONTATE-NOS</h4>
+          <div class="contato">
+            <a href="https://instagram.com" target="_blank">
+              <i class="icon-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank">
+              <i class="icon-facebook"></i>
+            </a>
+            <a href="#"><i class="icon-whatsapp"></i></a>
+          </div>
+        </div>
+      </footer>
     </main>
 
     <!-- Bootstrap JS -->
