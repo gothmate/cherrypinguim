@@ -1,21 +1,19 @@
 @use 'variables'
 @import url('../assets/sansita-one/SansitaOne.ttf')
 
+@mixin hamburguer
+  content: ''
+  position: absolute
+  width: 100%
+  height: 4px
+  background: variables.$gray
+
 @mixin pseudo_cardapio
   content: ''
   width: 50vw
   height: 100%
   background: variables.$dark
   top: 0
-
-@mixin sobre
-  content: ''
-  position: absolute
-  width: 100vw
-  height: 100%
-  background: variables.$iced
-  top: 0
-  z-index: 0
 
 @mixin galeria
   display: flex
@@ -42,19 +40,24 @@ body
 
 header
   position: fixed
+  display: flex
+  background: variables.$mustard
   width: 100vw
+  max-height: 70px
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
   z-index: 100
   & ul
     position: relative
-    background: variables.$mustard
     display: flex
     justify-content: center
     align-items: center
   & li
     list-style: none
     padding: 2rem 0
-    padding-left: clamp(1rem, 5vw + .2rem ,2rem)
-    padding-right: clamp(1rem, 5vw + .2rem ,2rem)
+    padding-left: clamp(1rem, 3vw + 0.4rem ,2rem)
+    padding-right: clamp(1rem, 3vw + 0.4rem ,2rem)
     min-width: max-content
   & a
     font-family: 'Single Day', sans-serif
@@ -66,14 +69,34 @@ header
   & .img-container
     position: relative
     width: 123px
-    height: 80px
+    height: 70px
+    padding: 0
+    margin: 0
     & img
       position: absolute
-      top: 0
+      top: -10px
       left: calc(50% - 62.5px)
       z-index: 100
       width: 123px
 
+#modal
+  position: absolute
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background: variables.$lightpink
+  display: flex
+  flex: 1
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  & a
+    margin: 2rem 0
+    text-decoration: none
+    font-size: 2rem
+    font-family: 'Single Day', cursive
+    color: variables.$iced
 main
   background: variables.$mustard
 
@@ -95,7 +118,7 @@ main
     color: variables.$iced
     font-size: clamp(3rem, 5vw + 1rem, 5rem)
     line-height: 100%
-    z-index: 4
+    // z-index: 4
     & h2
       font-size: clamp(3rem, 5vw + 1rem, 5rem)
       font-family: 'Sacramento', cursive
@@ -118,7 +141,7 @@ main
       right: 2rem
       top: 9rem
 
-#sobre
+#qualidade
   padding: 0 5rem
   display: flex
   justify-content: center
@@ -127,12 +150,6 @@ main
   position: relative
   background: variables.$iced
   z-index: 1
-  &::before
-    @include sobre
-    right: 50%
-  &::after
-    @include sobre
-    right: -50%
   & .img
     z-index: 3
     img
@@ -161,7 +178,7 @@ main
       margin-bottom: 3rem
 
 #cardapio
-  padding: 0 5rem
+  padding: 0 clamp(1.5rem, 10vw + 2rem,5rem)
   position: relative
   height: 100%
   z-index: 0
@@ -250,7 +267,7 @@ main
       & img
         width: 200px
 
-#pagamento
+#sobre
   display: flex
   flex-wrap: wrap
   justify-content: space-between
@@ -279,28 +296,95 @@ main
     p
       text-align: center
 
-@media (max-width: 940)
+@media (max-width: 940px)
+  body
+    overflow-x: hidden
   header
-    & .img-container
+    position: relative
+    & ul
+      visibility: hidden
+      // touch-action: false
+
+    & .hamburguer_container
       position: absolute
-      z-index: -100
-      & #pengo
-        visibility: hidden
+      display: flex
+      align-items: center
+      right: 30px
+      top: 20px
+      width: 32px
+      height: 32px
+      & .hamburguer
+        position: relative
+        z-index: 101
+        width: 100%
+        height: 4px
+        background: variables.$gray
+        &:hover
+          cursor: pointer
+        &::before
+          @include hamburguer
+          top: -10px
+        &::after
+          @include hamburguer
+          bottom: 20px
+      & .animate
         position: absolute
+        top: 0
+        @include hamburguer
+        background: transparent
+        &::before
+          @include hamburguer
+          top: -8px
+          right: 0
+          animation: animateC 700ms forwards
+        &::after
+          @include hamburguer
+          top: 8px
+          right: 0
+          animation: animateCC 700ms forwards
+
+  @keyframes animateC
+    0%
+      transform: rotate(0deg)
+    100%
+      transform: rotate(45deg)
+      top: 0
+
+  @keyframes animateCC
+    0%
+      transform: rotate(0deg)
+    100%
+      transform: rotate(-45deg)
+      top: 0
+
+  #qualidade
+    & .text
+      padding: 0 2rem
   #cardapio
-    padding: 0
+    padding: 0 2rem
     &::before
-      left: -50%
+      top: 0
+      left: -20%
       width: 100vw
     &::after
       left: -50%
       width: 100vw
     & .fotos
-      align-items: flex-start
+      align-items: center
       & .salgados, .doces
         & p
           position: relative
           left: 0
-  #pagamento
-    padding: 0
-    justify-content: flex-start
+  #sobre
+    padding: 1rem 2rem
+    justify-content: center
+
+    & .text
+      & #right
+        min-width: 18rem
+    h4
+      text-align: left
+    .atend
+      text-align: left
+    p
+      text-align: left
