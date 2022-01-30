@@ -76,12 +76,16 @@ header .img-container img {
   justify-content: center;
   align-items: center;
 }
-#modal a {
+#modal .links {
   margin: 2rem 0;
   text-decoration: none;
   font-size: 2rem;
   font-family: "Single Day", cursive;
   color: #F5F4F1;
+}
+#modal .disable {
+  cursor: none;
+  pointer-events: none;
 }
 
 main {
